@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AKP Design Academy | 2D CAD ও 3D ভিজুয়ালাইজেশন কোর্স</title>
-<meta name="description" content="AKP Design Academy — বাংলাদেশের শিক্ষার্থীদের জন্য 2D CAD ড্রাফটিং ও 3D আর্কিটেকচারাল ভিজুয়ালাইজেশন শেখার প্র্যাকটিক্যাল কোর্স, রেকর্ডেড ক্লাস ও লাইভ মেন্টরশিপসহ।">
+<meta name="description" content="AKP Design Academy — বাংলাদেশের শিক্ষার্থীদের জন্য 2D CAD ড্রাফটিং ও 3D আর্কিটেকচারাল ভিজুয়ালাইজেশনের প্রফেশনাল কোর্স মডিউল, রেকর্ডেড ক্লাস ও লাইভ মেন্টরশিপসহ।">
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -27,6 +27,8 @@ img{max-width:100%; display:block;}
 .btn-primary:hover{background:var(--orange-dark); transform:translateY(-1px);}
 .btn-outline{background:transparent; color:#fff; border:2px solid rgba(255,255,255,0.6);}
 .btn-outline:hover{background:rgba(255,255,255,0.12); border-color:#fff;}
+.btn-outline-navy{background:transparent; color:var(--navy); border:2px solid var(--navy);}
+.btn-outline-navy:hover{background:var(--navy); color:#fff;}
 
 header{background:var(--navy); position:sticky; top:0; z-index:50; border-bottom:1px solid rgba(255,255,255,0.08);}
 .nav-wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 0; flex-wrap:wrap; gap:10px;}
@@ -39,27 +41,22 @@ nav a:hover{color:var(--orange);}
 .back-link:hover{color:var(--orange);}
 @media(max-width:760px){nav ul{display:none;}}
 
-/* Hero */
-.hero{background:linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 100%); color:#fff; padding:64px 0 0; position:relative; overflow:hidden;}
-.hero-inner{display:flex; flex-wrap:wrap; align-items:center; gap:40px; padding-bottom:56px;}
-.hero-photo-wrap{position:relative; flex:0 0 auto; width:220px; height:220px;}
-.hero-photo-glow{position:absolute; inset:-18px; border-radius:50%; background:radial-gradient(circle, rgba(242,98,39,0.35) 0%, rgba(242,98,39,0) 70%);}
-.hero-photo-wrap img{position:relative; width:220px; height:220px; border-radius:50%; object-fit:cover; border:4px solid rgba(255,255,255,0.15);}
-.hero-text{flex:1 1 420px;}
+/* Hero — institution-first, no personal photo */
+.hero{background:linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 100%); color:#fff; padding:64px 0 0;}
+.hero-inner{display:flex; flex-wrap:wrap; align-items:center; gap:44px; padding-bottom:56px;}
+.hero-text{flex:1 1 480px;}
 .badge-pilot{display:inline-block; background:rgba(242,98,39,0.15); border:1px solid var(--orange); color:var(--orange); font-size:12.5px; font-weight:700; padding:5px 14px; border-radius:20px; margin-bottom:16px;}
 .hero-text h1{font-size:34px; color:#fff; margin-bottom:14px;}
 .hero-text h1 span{color:var(--orange);}
-.hero-text p{font-size:15.5px; color:#cdd5e0; max-width:560px; margin-bottom:24px;}
+.hero-text p{font-size:15.5px; color:#cdd5e0; max-width:580px; margin-bottom:24px;}
 .hero-actions{display:flex; flex-wrap:wrap; gap:14px;}
+.hero-panel{flex:1 1 320px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); border-radius:10px; padding:28px;}
+.hero-panel h3{color:#fff; font-size:16px; margin-bottom:16px;}
+.hero-panel ul{list-style:none;}
+.hero-panel li{display:flex; gap:9px; align-items:flex-start; color:#dfe4ea; font-size:14.5px; margin-bottom:12px;}
+.hero-panel li::before{content:"✓"; color:var(--orange); font-weight:700;}
 
-/* Marquee ticker */
-.ticker{background:var(--orange); overflow:hidden; white-space:nowrap; position:relative;}
-.ticker-track{display:inline-block; padding:11px 0; animation:tickerScroll 28s linear infinite;}
-.ticker-track span{display:inline-block; color:#fff; font-weight:700; font-size:13px; letter-spacing:.4px; padding:0 22px;}
-@keyframes tickerScroll{0%{transform:translateX(0);} 100%{transform:translateX(-50%);}}
-@media(prefers-reduced-motion: reduce){.ticker-track{animation:none;}}
-
-/* Stats */
+/* Stats — institutional, no per-person labels */
 .stats-row{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:0; background:var(--navy-light); border-top:1px solid rgba(255,255,255,0.08);}
 .stat-box{text-align:center; padding:24px 12px; border-right:1px solid rgba(255,255,255,0.08);}
 .stat-box:last-child{border-right:none;}
@@ -73,44 +70,55 @@ section{padding:64px 0;}
 .section-head p{color:var(--gray); font-size:15.5px;}
 .alt{background:var(--off-white);}
 
-/* Course card */
-.course-card{background:#fff; border:1px solid var(--border); border-radius:14px; overflow:hidden; max-width:820px; margin:0 auto; box-shadow:0 16px 36px rgba(11,34,57,0.07);}
-.course-head{background:var(--navy); color:#fff; padding:26px 30px;}
+/* Course modules */
+.modules-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr)); gap:26px; align-items:start;}
+.course-card{background:#fff; border:1px solid var(--border); border-radius:14px; overflow:hidden; box-shadow:0 16px 36px rgba(11,34,57,0.07);}
+.course-head{background:var(--navy); color:#fff; padding:24px 28px;}
 .course-head-top{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px;}
-.course-head h3{color:#fff; font-size:21px; margin-bottom:6px;}
-.course-head p{color:#cdd5e0; font-size:13.5px;}
+.course-tag{color:var(--orange); font-weight:700; font-size:11.5px; letter-spacing:.6px; text-transform:uppercase; margin-bottom:6px; display:block;}
+.course-head h3{color:#fff; font-size:20px; margin-bottom:6px;}
+.course-head p{color:#cdd5e0; font-size:13px;}
 .course-price{text-align:right;}
-.course-price .amount{font-size:26px; font-weight:700; color:var(--orange);}
-.course-price .note{font-size:11.5px; color:#aab4c0;}
-.course-body{padding:28px 30px;}
-.course-meta{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin-bottom:24px;}
-.course-meta .item{background:var(--off-white); border:1px solid var(--border); border-radius:8px; padding:13px 15px;}
-.course-meta .item strong{display:block; color:var(--navy); font-size:14px;}
-.course-meta .item span{color:var(--gray); font-size:12px;}
-.course-list{list-style:none; margin-bottom:24px;}
-.course-list li{display:flex; gap:10px; align-items:flex-start; color:var(--gray); font-size:14px; margin-bottom:11px;}
+.course-price .amount{font-size:23px; font-weight:700; color:var(--orange);}
+.course-price .note{font-size:11px; color:#aab4c0;}
+.course-body{padding:26px 28px;}
+.course-meta{display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:12px; margin-bottom:22px;}
+.course-meta .item{background:var(--off-white); border:1px solid var(--border); border-radius:8px; padding:12px 14px;}
+.course-meta .item strong{display:block; color:var(--navy); font-size:13.5px;}
+.course-meta .item span{color:var(--gray); font-size:11.5px;}
+.course-list{list-style:none; margin-bottom:22px;}
+.course-list li{display:flex; gap:10px; align-items:flex-start; color:var(--gray); font-size:13.5px; margin-bottom:10px;}
 .course-list li::before{content:"✓"; color:var(--orange); font-weight:700; flex-shrink:0;}
-.course-note{background:var(--off-white); border-left:4px solid var(--orange); border-radius:8px; padding:15px 17px; font-size:13px; color:var(--gray); margin-bottom:22px;}
+.course-note{background:var(--off-white); border-left:4px solid var(--orange); border-radius:8px; padding:14px 16px; font-size:12.5px; color:var(--gray); margin-bottom:20px;}
 .course-note strong{color:var(--navy);}
 .course-cta{display:flex; flex-wrap:wrap; gap:12px;}
 
-/* Instructors */
-.team-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:28px;}
-.team-card{background:#fff; border:1px solid var(--border); border-radius:14px; padding:30px 24px; text-align:center; transition:box-shadow .25s ease, transform .25s ease;}
-.team-card:hover{box-shadow:0 16px 30px rgba(11,34,57,0.1); transform:translateY(-4px);}
-.team-photo{width:100px; height:100px; border-radius:50%; object-fit:cover; margin:0 auto 15px; border:4px solid var(--off-white); box-shadow:0 8px 20px rgba(11,34,57,0.12);}
-.team-card h3{font-size:17px; margin-bottom:4px;}
-.team-specialty{color:var(--orange); font-weight:700; font-size:12.5px; margin-bottom:15px;}
-.team-stats{display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:15px;}
-.team-stats .stat{background:var(--off-white); border:1px solid var(--border); border-radius:8px; padding:8px 11px; min-width:74px;}
-.team-stats .stat-num{display:block; color:var(--navy); font-weight:700; font-size:15px;}
-.team-stats .stat-label{display:block; color:var(--gray); font-size:10px;}
-.team-card p.role{color:var(--gray); font-size:13px;}
+/* Institution trust block */
+.trust-block{background:#fff; border:1px solid var(--border); border-radius:14px; padding:36px 34px; max-width:820px; margin:0 auto; text-align:center;}
+.trust-block h3{font-size:19px; margin-bottom:14px;}
+.trust-block p{color:var(--gray); font-size:14.5px; margin-bottom:8px;}
+
+/* Instructor cards (secondary to institution) */
+.team-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; max-width:760px; margin:40px auto 0;}
+.team-card{background:#fff; border:1px solid var(--border); border-radius:14px; padding:28px 22px; text-align:center;}
+.team-photo{width:88px; height:88px; border-radius:50%; object-fit:cover; margin:0 auto 13px; border:4px solid var(--off-white); box-shadow:0 8px 20px rgba(11,34,57,0.1);}
+.team-card h3{font-size:16px; margin-bottom:4px;}
+.team-specialty{color:var(--orange); font-weight:700; font-size:12px; margin-bottom:13px;}
+.team-stats{display:flex; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:13px;}
+.team-stats .stat{background:var(--off-white); border:1px solid var(--border); border-radius:8px; padding:7px 10px; min-width:68px;}
+.team-stats .stat-num{display:block; color:var(--navy); font-weight:700; font-size:14px;}
+.team-stats .stat-label{display:block; color:var(--gray); font-size:9.5px;}
+.team-card p.role{color:var(--gray); font-size:12.5px;}
+
+/* Fiverr section */
+.fiverr-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px; max-width:700px; margin:0 auto;}
+.fiverr-card{background:#fff; border:1px solid var(--border); border-radius:12px; padding:26px 22px; text-align:center;}
+.fiverr-card h4{font-size:15px; margin-bottom:8px;}
+.fiverr-card p{color:var(--gray); font-size:13px; margin-bottom:16px;}
 
 /* Why grid */
 .why-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px;}
-.why-item{background:#fff; border:1px solid var(--border); border-radius:12px; padding:26px 22px; text-align:center; transition:transform .2s ease, box-shadow .25s ease;}
-.why-item:hover{transform:translateY(-4px); box-shadow:0 14px 26px rgba(11,34,57,0.08);}
+.why-item{background:#fff; border:1px solid var(--border); border-radius:12px; padding:26px 22px; text-align:center;}
 .why-icon{width:48px; height:48px; border-radius:50%; margin:0 auto 14px; background:linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); color:var(--orange); display:flex; align-items:center; justify-content:center;}
 .why-icon svg{width:22px; height:22px;}
 .why-item h3{font-size:15px; margin-bottom:8px;}
@@ -133,19 +141,12 @@ footer{background:#08192b; color:#aab4c0; padding:32px 0; font-size:13px; text-a
 footer a{text-decoration:underline; text-underline-offset:3px;}
 footer a:hover{color:var(--orange);}
 
-/* Floating WhatsApp */
-.wa-float{
-position:fixed; right:20px; bottom:20px; z-index:200;
-width:56px; height:56px; border-radius:50%; background:#25D366;
-display:flex; align-items:center; justify-content:center;
-box-shadow:0 8px 20px rgba(0,0,0,0.25); transition:transform .2s ease;
-}
+.wa-float{position:fixed; right:20px; bottom:20px; z-index:200; width:56px; height:56px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(0,0,0,0.25); transition:transform .2s ease;}
 .wa-float:hover{transform:scale(1.08);}
 .wa-float svg{width:28px; height:28px; fill:#fff;}
 
 @media(max-width:640px){
 .hero-text h1{font-size:26px;}
-.hero-inner{flex-direction:column; text-align:center;}
 section{padding:46px 0;}
 .course-head-top{flex-direction:column;}
 .course-price{text-align:left;}
@@ -162,111 +163,120 @@ section{padding:46px 0;}
 <nav>
 <ul>
 <li><a href="#course">কোর্স</a></li>
-<li><a href="#instructors">ইন্সট্রাক্টর</a></li>
+<li><a href="#fiverr">Fiverr</a></li>
 <li><a href="#faq">প্রশ্নোত্তর</a></li>
 <li><a href="#contact">যোগাযোগ</a></li>
 </ul>
 </nav>
-<a class="back-link" href="https://khshohag690.github.io/" target="_blank" rel="noopener">AKP Design Studio (মূল সাইট) →</a>
+<a class="back-link" href="https://khshohag690.github.io/" target="_blank" rel="noopener">AKP Design Studio →</a>
 </div>
 </header>
 
 <section class="hero">
 <div class="container hero-inner">
-<div class="hero-photo-wrap">
-<div class="hero-photo-glow"></div>
-<img src="https://khshohag690.github.io/kamrul-shohag.jpg" alt="Kamrul Shohag">
-</div>
 <div class="hero-text">
-<div class="badge-pilot">প্রথম ব্যাচ · সীমিত আসন</div>
+<div class="badge-pilot">ভর্তি চলছে</div>
 <h1>AKP Design <span>Academy</span></h1>
-<p>দেশের ভেতরে বসেই 2D CAD ড্রাফটিং ও 3D আর্কিটেকচারাল ভিজুয়ালাইজেশনের প্র্যাকটিক্যাল স্কিল শিখুন — যা দিয়ে ফ্রিল্যান্সিং বা প্রফেশনাল ক্যারিয়ার দুটোই শুরু করা যায়। রেকর্ডেড ক্লাসের পাশাপাশি সরাসরি ইন্সট্রাক্টরের সাথে সাপ্তাহিক লাইভ সেশন।</p>
+<p>দেশের ভেতরে বসেই 2D CAD ড্রাফটিং ও 3D আর্কিটেকচারাল ভিজুয়ালাইজেশনের প্রফেশনাল স্কিল শিখুন — যা দিয়ে ফ্রিল্যান্সিং বা প্রফেশনাল ক্যারিয়ার দুটোই শুরু করা যায়। রেকর্ডেড ক্লাসের পাশাপাশি সরাসরি লাইভ মেন্টরশিপ সেশন।</p>
 <div class="hero-actions">
-<a class="btn btn-primary" href="#course">কোর্স দেখুন</a>
-<a class="btn btn-outline" href="#contact">আগ্রহী? যোগাযোগ করুন</a>
+<a class="btn btn-primary" href="#course">কোর্স মডিউল দেখুন</a>
+<a class="btn btn-outline" href="#contact">ভর্তি হতে যোগাযোগ করুন</a>
 </div>
 </div>
-</div>
-<div class="ticker">
-<div class="ticker-track">
-<span>AKP DESIGN STUDIO-র উদ্যোগ</span>
-<span>✦</span>
-<span>২D CAD-এ ১৩+ বছরের অভিজ্ঞতা</span>
-<span>✦</span>
-<span>৩D ভিজুয়ালাইজেশনে ১০+ বছরের অভিজ্ঞতা</span>
-<span>✦</span>
-<span>রেকর্ডেড + লাইভ হাইব্রিড মডেল</span>
-<span>✦</span>
-<span>প্রথম ব্যাচ — সীমিত আসন</span>
-<span>✦</span>
-<span>AKP DESIGN STUDIO-র উদ্যোগ</span>
-<span>✦</span>
-<span>২D CAD-এ ১৩+ বছরের অভিজ্ঞতা</span>
-<span>✦</span>
-<span>৩D ভিজুয়ালাইজেশনে ১০+ বছরের অভিজ্ঞতা</span>
-<span>✦</span>
-<span>রেকর্ডেড + লাইভ হাইব্রিড মডেল</span>
-<span>✦</span>
-<span>প্রথম ব্যাচ — সীমিত আসন</span>
-<span>✦</span>
+<div class="hero-panel">
+<h3>AKP Design Academy সম্পর্কে</h3>
+<ul>
+<li>প্রতিষ্ঠান হিসেবে পরিচালিত প্রফেশনাল ট্রেনিং প্রোগ্রাম</li>
+<li>রেকর্ডেড ভিডিও মডিউল + সাপ্তাহিক লাইভ Q&amp;A ও প্রজেক্ট রিভিউ</li>
+<li>বাস্তব ইন্ডাস্ট্রি ওয়ার্কফ্লো অনুযায়ী কারিকুলাম ডিজাইন</li>
+<li>দুটি সম্পূর্ণ কোর্স মডিউল — 2D CAD ও 3D ভিজুয়ালাইজেশন</li>
+</ul>
 </div>
 </div>
 <div class="stats-row">
-<div class="stat-box"><span class="num">১৩+</span><span class="label">বছর CAD অভিজ্ঞতা (Kamrul)</span></div>
-<div class="stat-box"><span class="num">১০+</span><span class="label">বছর 3D ভিজুয়ালাইজেশন (Rayhan)</span></div>
-<div class="stat-box"><span class="num">১৫০০+</span><span class="label">CAD প্রজেক্ট সম্পন্ন</span></div>
-<div class="stat-box"><span class="num">৪.৯</span><span class="label">ইন্সট্রাক্টর রেটিং (৯২ রিভিউ)</span></div>
+<div class="stat-box"><span class="num">১৩+</span><span class="label">বছর CAD অভিজ্ঞতা</span></div>
+<div class="stat-box"><span class="num">১০+</span><span class="label">বছর 3D ভিজুয়ালাইজেশন অভিজ্ঞতা</span></div>
+<div class="stat-box"><span class="num">১৫০০+</span><span class="label">প্রজেক্ট সম্পন্ন</span></div>
+<div class="stat-box"><span class="num">৪.৯</span><span class="label">ক্লায়েন্ট রেটিং (৯২ রিভিউ)</span></div>
 </div>
 </section>
 
 <section id="course">
 <div class="container">
 <div class="section-head">
-<div class="section-eyebrow">পাইলট কোর্স</div>
-<h2>2D CAD for Beginners</h2>
-<p>যারা শূন্য থেকে AutoCAD-এ প্র্যাকটিক্যাল ড্রাফটিং শিখতে চান, তাদের জন্য ৬ সপ্তাহের স্ট্রাকচার্ড কোর্স।</p>
+<div class="section-eyebrow">কোর্স মডিউল</div>
+<h2>AKP Design Academy কোর্স</h2>
+<p>দুটি সম্পূর্ণ প্রফেশনাল মডিউল — 2D CAD ও 3D আর্কিটেকচারাল ভিজুয়ালাইজেশন।</p>
 </div>
+<div class="modules-grid">
+
 <div class="course-card">
 <div class="course-head">
 <div class="course-head-top">
 <div>
-<h3>2D CAD for Beginners</h3>
+<span class="course-tag">মডিউল ০১</span>
+<h3>2D CAD Design &amp; Drafting</h3>
 <p>৬ সপ্তাহ · রেকর্ডেড + লাইভ হাইব্রিড মডেল</p>
 </div>
 <div class="course-price">
 <div class="amount">৳ ২,৫০০</div>
-<div class="note">পাইলট ব্যাচ মূল্য</div>
+<div class="note">কোর্স ফি</div>
 </div>
 </div>
 </div>
 <div class="course-body">
 <div class="course-meta">
-<div class="item"><strong>৬ সপ্তাহ</strong><span>মোট কোর্স সময়কাল</span></div>
-<div class="item"><strong>৯ ঘন্টা</strong><span>রেকর্ডেড ভিডিও কনটেন্ট</span></div>
-<div class="item"><strong>সাপ্তাহিক</strong><span>লাইভ Q&amp;A সেশন</span></div>
-<div class="item"><strong>১০–১৫ জন</strong><span>প্রথম ব্যাচের আসন সংখ্যা</span></div>
+<div class="item"><strong>৬ সপ্তাহ</strong><span>কোর্স সময়কাল</span></div>
+<div class="item"><strong>৯ ঘন্টা</strong><span>রেকর্ডেড ভিডিও</span></div>
+<div class="item"><strong>সাপ্তাহিক</strong><span>লাইভ সেশন</span></div>
 </div>
 <ul class="course-list">
 <li>AutoCAD ইন্টারফেস, বেসিক টুলস ও ড্রয়িং সেটআপ থেকে শুরু</li>
 <li>স্কেল, ডাইমেনশন ও লেয়ার স্ট্রাকচার — ইন্ডাস্ট্রি স্ট্যান্ডার্ড অনুযায়ী</li>
-<li>সাপ্তাহিক লাইভ সেশনে সরাসরি প্রশ্ন করা ও প্রজেক্ট রিভিউ পাওয়ার সুযোগ</li>
-<li>কোর্স শেষে নিজের হাতে তৈরি একটি সম্পূর্ণ ড্রয়িং প্রজেক্ট</li>
+<li>সাপ্তাহিক লাইভ সেশনে প্রশ্ন ও প্রজেক্ট রিভিউ</li>
+<li>কোর্স শেষে একটি সম্পূর্ণ ড্রয়িং প্রজেক্ট</li>
 </ul>
-<div class="course-note"><strong>উল্লেখ্য:</strong> এটি একাডেমির প্রথম (পাইলট) ব্যাচ। রেজিস্ট্রেশন, পেমেন্ট পদ্ধতি ও ক্লাস প্ল্যাটফর্মের বিস্তারিত যোগাযোগ করলে জানিয়ে দেওয়া হবে।</div>
+<div class="course-note"><strong>উল্লেখ্য:</strong> রেজিস্ট্রেশন ও পেমেন্ট পদ্ধতির বিস্তারিত যোগাযোগ করলে জানিয়ে দেওয়া হবে।</div>
 <div class="course-cta">
-<a class="btn btn-primary" href="#contact">আসন সংরক্ষণে আগ্রহী</a>
+<a class="btn btn-primary" href="#contact">ভর্তি হতে আগ্রহী</a>
 </div>
 </div>
+</div>
+
+<div class="course-card">
+<div class="course-head">
+<div class="course-head-top">
+<div>
+<span class="course-tag">মডিউল ০২</span>
+<h3>3D Architectural Visualization</h3>
+<p>বিস্তারিত সময়কাল ও ফি শীঘ্রই ঘোষণা করা হবে</p>
+</div>
+</div>
+</div>
+<div class="course-body">
+<ul class="course-list">
+<li>2D প্ল্যান থেকে সঠিক অনুপাতে 3D মডেল তৈরি</li>
+<li>SketchUp, 3ds Max, Lumion ও D5 Render ওয়ার্কফ্লো</li>
+<li>এক্সটেরিয়র ও ইন্টেরিয়র ফটোরিয়ালিস্টিক রেন্ডারিং</li>
+<li>ক্লায়েন্ট প্রেজেন্টেশন বোর্ড তৈরি</li>
+</ul>
+<div class="course-note"><strong>উল্লেখ্য:</strong> এই মডিউলের সময়কাল, কোর্স ফি ও ব্যাচ শুরুর তারিখ শীঘ্রই যোগ করা হবে।</div>
+<div class="course-cta">
+<a class="btn btn-outline-navy" href="#contact">আপডেট পেতে যোগাযোগ করুন</a>
+</div>
+</div>
+</div>
+
 </div>
 </div>
 </section>
 
-<section id="instructors" class="alt">
+<section class="alt" id="instructors">
 <div class="container">
 <div class="section-head">
 <div class="section-eyebrow">ইন্সট্রাক্টর</div>
 <h2>যাদের কাছে শিখবেন</h2>
-<p>AKP Design Studio-র দুই বিশেষজ্ঞ, যারা প্রতিদিন বাস্তব ক্লায়েন্ট প্রজেক্টে কাজ করেন।</p>
+<p>বাস্তব ইন্ডাস্ট্রি অভিজ্ঞতাসম্পন্ন দুই বিশেষজ্ঞ, যারা প্রতিদিন প্রফেশনাল CAD ও 3D ভিজুয়ালাইজেশন প্রজেক্টে কাজ করেন।</p>
 </div>
 <div class="team-grid">
 <div class="team-card">
@@ -303,9 +313,9 @@ section{padding:46px 0;}
 </div>
 <div class="why-grid">
 <div class="why-item">
-<div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 4z"/></svg></div>
-<h3>সরাসরি ইন্সট্রাক্টরের সাথে যোগাযোগ</h3>
-<p>বড় ব্যাচ নয় — প্রশ্ন করলে সরাসরি উত্তর পাবেন লাইভ সেশনে।</p>
+<div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg></div>
+<h3>দুই বিষয়ে সম্পূর্ণ কোর্স মডিউল</h3>
+<p>2D CAD ও 3D ভিজুয়ালাইজেশন — একই প্রতিষ্ঠানের অধীনে দুটি সম্পূর্ণ ট্র্যাক।</p>
 </div>
 <div class="why-item">
 <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
@@ -314,14 +324,36 @@ section{padding:46px 0;}
 </div>
 <div class="why-item">
 <div class="why-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6z"/></svg></div>
-<h3>বাস্তব ইন্ডাস্ট্রি অভিজ্ঞতা থেকে শেখানো</h3>
-<p>যারা শেখাচ্ছেন, তারা নিজেরাই প্রতিদিন প্রফেশনাল ক্লায়েন্ট প্রজেক্টে কাজ করেন।</p>
+<h3>বাস্তব ইন্ডাস্ট্রি অভিজ্ঞতা থেকে তৈরি কারিকুলাম</h3>
+<p>প্রতিষ্ঠানটি নিজেই প্রতিদিন প্রফেশনাল ক্লায়েন্ট প্রজেক্টে কাজ করে।</p>
 </div>
 </div>
 </div>
 </section>
 
-<section id="faq" class="alt">
+<section id="fiverr" class="alt">
+<div class="container">
+<div class="section-head">
+<div class="section-eyebrow">ভেরিফাইড কাজের প্রমাণ</div>
+<h2>আমাদের Fiverr প্রোফাইল</h2>
+<p>কোর্স শুরুর আগে আমাদের প্রফেশনাল কাজের মান যাচাই করে নিতে পারেন।</p>
+</div>
+<div class="fiverr-grid">
+<div class="fiverr-card">
+<h4>2D CAD Drafting</h4>
+<p>CAD ড্রাফটিং ও কনস্ট্রাকশন ডকুমেন্টেশন সার্ভিস</p>
+<a class="btn btn-outline-navy" href="https://www.fiverr.com/khshohag690" target="_blank" rel="noopener">Fiverr প্রোফাইল দেখুন</a>
+</div>
+<div class="fiverr-card">
+<h4>3D Visualization</h4>
+<p>আর্কিটেকচারাল 3D মডেলিং ও রেন্ডারিং সার্ভিস</p>
+<a class="btn btn-outline-navy" href="#contact">লিংক শীঘ্রই যোগ হবে</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="faq">
 <div class="container">
 <div class="section-head">
 <div class="section-eyebrow">প্রশ্নোত্তর</div>
@@ -329,12 +361,12 @@ section{padding:46px 0;}
 </div>
 <div class="faq">
 <div class="faq-item">
-<h4>এই কোর্স করতে আগে থেকে CAD জানা লাগবে?</h4>
-<p>না। "2D CAD for Beginners" শূন্য থেকে শুরু করে ধাপে ধাপে শেখানোর জন্য ডিজাইন করা হয়েছে।</p>
+<h4>এই কোর্স করতে আগে থেকে অভিজ্ঞতা লাগবে?</h4>
+<p>না। শূন্য থেকে শুরু করে ধাপে ধাপে শেখানোর জন্য কারিকুলাম ডিজাইন করা হয়েছে।</p>
 </div>
 <div class="faq-item">
 <h4>ক্লাস করার জন্য কী কী লাগবে?</h4>
-<p>একটি কম্পিউটার বা ল্যাপটপ যাতে AutoCAD চালানো যায়, এবং ইন্টারনেট সংযোগ। বিস্তারিত সিস্টেম রিকোয়ারমেন্ট রেজিস্ট্রেশনের সময় জানিয়ে দেওয়া হবে।</p>
+<p>একটি কম্পিউটার বা ল্যাপটপ যাতে প্রয়োজনীয় সফটওয়্যার চালানো যায়, এবং ইন্টারনেট সংযোগ। বিস্তারিত সিস্টেম রিকোয়ারমেন্ট রেজিস্ট্রেশনের সময় জানিয়ে দেওয়া হবে।</p>
 </div>
 <div class="faq-item">
 <h4>লাইভ সেশন মিস করলে কী হবে?</h4>
@@ -342,20 +374,20 @@ section{padding:46px 0;}
 </div>
 <div class="faq-item">
 <h4>কীভাবে রেজিস্ট্রেশন করব?</h4>
-<p>নিচের যোগাযোগ মাধ্যমে (WhatsApp বা ইমেইল) জানালে আসন সংরক্ষণ ও পেমেন্ট প্রক্রিয়া সম্পর্কে বিস্তারিত জানানো হবে। প্রথম ব্যাচে আসন সীমিত।</p>
+<p>নিচের যোগাযোগ মাধ্যমে (WhatsApp বা ইমেইল) জানালে রেজিস্ট্রেশন ও পেমেন্ট প্রক্রিয়া সম্পর্কে বিস্তারিত জানানো হবে।</p>
 </div>
 </div>
 </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="alt">
 <div class="container">
 <div class="contact-box">
-<h2>প্রথম ব্যাচে যোগ দিতে আগ্রহী?</h2>
-<p>নিচের যেকোনো মাধ্যমে যোগাযোগ করুন — আসন সংখ্যা সীমিত, তাই আগে যোগাযোগ করলে অগ্রাধিকার পাবেন।</p>
+<h2>ভর্তি হতে আগ্রহী?</h2>
+<p>নিচের যেকোনো মাধ্যমে যোগাযোগ করুন — রেজিস্ট্রেশন ও কোর্স সম্পর্কিত বিস্তারিত তথ্য জানিয়ে দেওয়া হবে।</p>
 <div class="contact-actions">
-<a class="btn btn-primary" href="https://wa.me/8801737040429?text=আমি%20AKP%20Design%20Academy%20এর%202D%20CAD%20for%20Beginners%20কোর্স%20সম্পর্কে%20জানতে%20চাই" target="_blank" rel="noopener">WhatsApp-এ যোগাযোগ করুন</a>
-<a class="btn btn-outline" href="mailto:akpec.infobd@gmail.com?subject=2D%20CAD%20for%20Beginners%20-%20আগ্রহী">ইমেইল করুন</a>
+<a class="btn btn-primary" href="https://wa.me/8801737040429?text=আমি%20AKP%20Design%20Academy%20এর%20কোর্স%20সম্পর্কে%20জানতে%20চাই" target="_blank" rel="noopener">WhatsApp-এ যোগাযোগ করুন</a>
+<a class="btn btn-outline-navy" href="mailto:akpec.infobd@gmail.com?subject=AKP%20Design%20Academy%20-%20আগ্রহী">ইমেইল করুন</a>
 </div>
 </div>
 </div>
@@ -363,8 +395,7 @@ section{padding:46px 0;}
 
 <footer>
 <div class="container">
-<p>AKP Design Academy — AKP Design Studio ও AKP Engineers &amp; Construction-এর একটি উদ্যোগ।</p>
-<p style="margin-top:8px;"><a href="https://khshohag690.github.io/" target="_blank" rel="noopener">AKP Design Studio (মূল সাইট) →</a></p>
+<p>AKP Design Academy — প্রফেশনাল CAD ও 3D ভিজুয়ালাইজেশন ট্রেনিং প্রোগ্রাম।</p>
 <p style="margin-top:12px; color:#7c8896;">© 2026 AKP Design Academy</p>
 </div>
 </footer>
